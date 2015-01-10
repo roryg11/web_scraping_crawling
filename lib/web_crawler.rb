@@ -1,4 +1,3 @@
-# response = RestClient.get 'http://www.yelp.com/biz/fat-angel-san-francisco', :user_agent => 'Chrome'
 require 'rest-client'
 require 'nokogiri'
 
@@ -60,23 +59,3 @@ class Bfs
     return nil
   end
 end
-
-score = Bfs.new('http://www.yelp.com/biz/fat-angel-san-francisco')
-
-p score.bfs(100)
-
-#if we give our bfs class a starting url
-# it can check the health score of our restaurant
-# look for the suggested restaurants
-# find their urls
-# go to their websites-- check their health scores
-# if those health scores match our requirements, return the name of that restaurant
-#
-
-# access the page HTML using restclient
-# put it into a nokugiri object
-# first we access an array of suggested businesses, and put them into an array
-# then we find their respective URLs
-# plug those into rest client
-# and then go find their health scores
-# keep doing this with a bfs search until we find a health score of 5
